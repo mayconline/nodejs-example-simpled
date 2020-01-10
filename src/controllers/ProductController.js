@@ -9,6 +9,7 @@ const Product = require('../models/Product');
 module.exports={
 
    async index(req,res){
+    
        try{
             const products = await Product.find().sort('-createdAt')
             return res.json(products)
@@ -54,6 +55,29 @@ module.exports={
             catch(err){
                 return res.json(err)
             }
+    },
+
+   async show(req,res){
+        const {_id} = req.params
+            try{
+                const product = await Product.findById(_id)
+                return res.json(product)
+            }
+            catch(err){
+                return res.json(err)
+            }
+    },
+
+   async search(req,res){
+        const {title} = req.params;
+
+        try{
+            const search = await Product.find({title})
+            return res.json(search)
+        }
+        catch(err){
+            return res.json(err)
+        }
     }
 
 }

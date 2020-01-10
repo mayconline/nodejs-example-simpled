@@ -12,6 +12,7 @@ app.use(express.json());
 const MONGO_URL = 'URL do MongoDB';
 const PORT = 'Porta que quer rodar';
 
+
 //conecta ao mongo
 mongoose.Promise = global.Promise;
 mongoose.connect( MONGO_URL, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(
