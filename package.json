@@ -1,0 +1,28 @@
+{
+  "name": "api-nodejs-examples",
+  "version": "1.0.0",
+  "description": "\"# node-api-example3\"",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.6",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon src/index.js",
+    "start":"node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayconline/node-api-example3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayconline/node-api-example3/issues"
+  },
+  "homepage": "https://github.com/mayconline/node-api-example3#readme"
+}
