@@ -38,6 +38,7 @@ module.exports={
         const {_id} = req.params
         try{
             const update = await Product.findByIdAndUpdate(_id, req.body, {new:true})
+            return res.json(update)
         }
         catch(err){
             return res.json(err)
