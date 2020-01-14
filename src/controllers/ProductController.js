@@ -58,6 +58,7 @@ module.exports={
     },
 
    async show(req,res){
+        //Exemplo:  params /products/1eda443ds
         const {_id} = req.params
             try{
                 const product = await Product.findById(_id)
@@ -69,8 +70,22 @@ module.exports={
     },
 
    async search(req,res){
+         //Exemplo:  params /search/fruta
         const {title} = req.params;
+           
+        try{
+            const search = await Product.find({title})
+            return res.json(search)
+        }
+        catch(err){
+            return res.json(err)
+        }
+    },
 
+    async searchQueryString(req,res){
+        //Exemplo: query /searchquery?title=fruta
+       const {title} = req.query;
+     
         try{
             const search = await Product.find({title})
             return res.json(search)
